@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ovoz oʻzgartirgich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Ovoz oʻzgartirgich</h1>
+    <p>Ovozingizni yozing, effekt tanlang, keyin xohlasangiz qoʻlda sozlang.</p>
+  </header>
+
+  <main>
+    <section class="panel" id="recordPanel">
+      <h2>Ovozni yozib oling</h2>
+      <div class="rec-row">
+        <button id="recBtn" class="rec-btn" type="button"><span class="dot"></span><span id="recLabel">Yozishni boshlash</span></button>
+        <span id="timer" class="timer">00:00</span>
+        <label class="btn-ghost">Fayl yuklash
+          <input type="file" id="fileInput" accept="audio/*" hidden>
+        </label>
+      </div>
+      <p id="status" class="hint">Boshlash uchun mikrofonga ruxsat bering. Yozuv 60 soniyadan keyin oʻzi toʻxtaydi.</p>
+      <div id="origWrap" hidden>
+        <p class="hint">Asl ovoz</p>
+        <audio id="origAudio" controls></audio>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Effektlar</h2>
+      <div id="presets" class="presets"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Qoʻlda sozlash</h2>
+      <div id="sliders" class="sliders"></div>
+      <button id="resetBtn" class="btn-ghost" type="button">Sozlamalarni tiklash</button>
+    </section>
+  </main>
+
+  <div class="result">
+    <span id="resState" class="res-state">Avval ovoz yozing</span>
+    <audio id="outAudio" controls></audio>
+    <a id="dlBtn" class="btn-dl" download="ovoz.wav" hidden>WAV yuklab olish</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
